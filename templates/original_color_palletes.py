@@ -6,7 +6,6 @@ import log
 from base import shared
 from color_palettes.color_palette_repository import ColorPaletteRepository
 
-
 color_palettes_repository = ColorPaletteRepository()
 
 
@@ -104,7 +103,8 @@ def test_functionality(result, out_progress, out_progress_end):
         count = count + 1
         out_progress(count)
 
-        if not get_color_palette(color_palette_id) is color_palettes_repository.get_data_from_cache()[0]:
+        if not get_color_palette(color_palette_id) is \
+               color_palettes_repository.get_data_from_cache()[0]:
             messages.append('get_color_palette failed')
         count = count + 1
         out_progress(count)
@@ -125,7 +125,8 @@ def test_validity(result, out_progress, out_progress_end):
 
     color_palettes_len = len(color_palettes_repository.get_data_from_cache())
     for color_palette in color_palettes_repository.get_data_from_cache():
-        test_count, test_messages = color_palette.validate(color_palettes_repository.get_data_from_cache())
+        test_count, test_messages = color_palette.validate(
+            color_palettes_repository.get_data_from_cache())
         count = count + test_count
         messages.extend(test_messages)
         out_progress(count, color_palettes_len)
