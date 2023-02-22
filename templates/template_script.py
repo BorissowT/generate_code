@@ -4,10 +4,10 @@ route is called.
 """
 import log
 from base import shared
-from {{ name }}.{{ name }}_repository import {{ camel_case_name }}Repository
+from {{ name }}.{{ name_singular }}_repository import {{ camel_case_singular }}Repository
 
 
-{{ name }}_repository = {{ camel_case_name }}Repository()
+{{ name }}_repository = {{ camel_case_singular }}Repository()
 
 
 def load_{{ name }}():
@@ -19,7 +19,7 @@ load_{{ name }}()
 
 
 def save_{{ name }}():
-    """Docstring"""
+    """Save {{ docstring_name_lower_case_singular }} data."""
     {{ name }}_repository.save_elements()
 
 
@@ -27,7 +27,7 @@ def save_{{ name }}():
 
 
 def has_{{ name_singular }}({{ name_singular }}_id):
-    """Return True if {{ name_singular }} with id exists."""
+    """Return True if {{ docstring_name_lower_case_singular }} with id exists."""
     return {{ name }}_repository.has_element({{ name_singular }}_id)
 
 
