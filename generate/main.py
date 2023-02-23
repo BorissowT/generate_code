@@ -47,5 +47,5 @@ for elem in names:
                                                   docstring_name_lower_case_singular=docstring_name_lower_case_singular,
                                                   docstrings_name_camelcase_plural=docstrings_name_camelcase_plural)
 
-    with open(f"templates/{name}.py", "w") as fh:
+    with open(f"generate/templates/{name}.py", "w") as fh:
         fh.write(output_from_parsed_template)
